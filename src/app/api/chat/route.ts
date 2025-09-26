@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { validateEnvironment } from '@/lib/env-validation';
 
 export interface ChatMessage {
   role: 'user' | 'assistant';
@@ -13,6 +14,16 @@ export interface ChatRequest {
 
 export async function POST(request: NextRequest) {
   try {
+    // Validate environment on each request (for better error reporting)
+    const { isValid, errors } = validateEnvironment();
+    if (!isValid) {
+      console.error('Environment validation failed:', errors);
+      return NextResponse.json(
+        { error: 'Server configuration error' },
+        { status: 500 }
+      );
+    }
+
     const body: ChatRequest = await request.json();
     const { provider, model, messages } = body;
 
@@ -39,7 +50,7 @@ export async function POST(request: NextRequest) {
 }
 
 async function handleOpenAI(model: string, messages: ChatMessage[]) {
-  const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY || process.env.OPENAI_API_KEY;
+  const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
     return NextResponse.json(
       { error: 'OpenAI API key not configured' },
@@ -78,7 +89,7 @@ async function handleOpenAI(model: string, messages: ChatMessage[]) {
 }
 
 async function handleAnthropic(model: string, messages: ChatMessage[]) {
-  const apiKey = process.env.NEXT_PUBLIC_ANTHROPIC_API_KEY || process.env.ANTHROPIC_API_KEY;
+  const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
     return NextResponse.json(
       { error: 'Anthropic API key not configured' },
@@ -117,7 +128,7 @@ async function handleAnthropic(model: string, messages: ChatMessage[]) {
 }
 
 async function handleGemini(model: string, messages: ChatMessage[]) {
-  const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY || process.env.GEMINI_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     return NextResponse.json(
       { error: 'Gemini API key not configured' },
