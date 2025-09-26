@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Next.js-based LLM chat application that allows users to interact with multiple AI providers (OpenAI GPT, Anthropic Claude, and Google Gemini). The application features conversation management, persistent storage using IndexedDB, and a modern UI built with the Cascade design system.
+AI-Chorus is a Next.js-based LLM chat application with the tagline "Your AI ensemble, ready to perform!" It allows users to interact with multiple AI providers (OpenAI GPT, Anthropic Claude, and Google Gemini). The application features conversation management, persistent storage using IndexedDB, and a modern UI built with the Cascade design system.
 
 ## Common Commands
 
@@ -88,3 +88,22 @@ Copy `.env.example` to `.env.local` and configure API keys:
 - Use CSS custom properties for theming consistency
 - Maintain responsive design principles
 - Components should be reusable and properly typed
+
+## Supported Models (Latest 2025)
+
+### OpenAI
+- **GPT-4.1** - Latest flagship with 1M token context, superior coding and reasoning
+- **GPT-4.1 Mini** - Beats GPT-4o performance with 83% cost reduction and half the latency
+- **GPT-4o** - Multimodal model supporting text, audio, image, and video inputs
+- **GPT-4o Mini** - Cost-effective alternative to GPT-3.5 Turbo with better performance
+
+### Anthropic Claude
+- **Claude Opus 4.1** - Latest flagship model, most powerful for complex reasoning and coding
+- **Claude Sonnet 4** - Advanced model with superior coding and reasoning capabilities
+- **Claude 3.7 Sonnet** - Hybrid reasoning model with rapid and thoughtful response modes
+- **Claude 3.5 Haiku** - Fast and cost-effective model for interactive applications
+
+### Google Gemini
+- **Gemini 2.5 Pro** - Latest flagship model with adaptive thinking capabilities
+- **Gemini 2.5 Flash** - High-performance model with improved agentic tool use
+- **Gemini 2.5 Flash Lite** - Fast, cost-effective model for high-throughput applications

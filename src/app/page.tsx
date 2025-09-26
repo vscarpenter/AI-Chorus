@@ -9,7 +9,8 @@ import { ChatMessage } from '@/components/ChatMessage';
 import { ChatInput } from '@/components/ChatInput';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-import { MessageSquare, Settings } from 'lucide-react';
+import { Settings } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Home() {
   const [currentConversation, setCurrentConversation] = useState<Conversation | null>(null);
@@ -142,9 +143,9 @@ export default function Home() {
         {/* Header */}
         <div className="border-b border-[var(--border-default)] bg-[var(--bg-surface)] p-[var(--space-md)]">
           <div className="flex items-center justify-between mb-4">
-            <h1 className="text-2xl font-bold text-[var(--fg-default)] flex items-center gap-2">
-              <MessageSquare className="w-6 h-6 text-[var(--emphasis-primary)]" />
-              LLM Chat
+            <h1 className="text-2xl font-bold text-[var(--fg-default)] flex items-center gap-3">
+              <Image src="/ai-chorus-logo.svg" alt="AI-Chorus" width={300} height={80} className="h-20 w-auto" />
+              AI-Chorus
             </h1>
             <div className="flex items-center gap-2">
               <Settings className="w-4 h-4 text-[var(--fg-muted)]" />
@@ -167,14 +168,14 @@ export default function Home() {
             <div className="flex items-center justify-center h-full">
               <Card className="max-w-md text-center">
                 <CardHeader>
-                  <CardTitle className="flex items-center justify-center gap-2">
-                    <MessageSquare className="w-6 h-6 text-[var(--emphasis-primary)]" />
-                    Welcome to LLM Chat
+                  <CardTitle className="flex items-center justify-center gap-3">
+                    <Image src="/ai-chorus-logo.svg" alt="AI-Chorus" width={300} height={80} className="h-20 w-auto" />
+                    Welcome to AI-Chorus
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-[var(--fg-muted)] mb-4">
-                    Select a provider and model above, then start a new conversation to begin chatting with AI.
+                    Your AI ensemble, ready to perform! Select a provider and model above, then start a new conversation to begin chatting with AI.
                   </p>
                   <Button
                     onClick={handleNewConversation}

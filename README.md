@@ -1,4 +1,6 @@
-# LLM Chat Application
+# AI-Chorus
+
+*Your AI ensemble, ready to perform!*
 
 A beautiful, modern web application for chatting with multiple Large Language Models (LLMs) including ChatGPT, Claude, and Gemini. Built with Next.js, TypeScript, and the Cascade design system.
 
@@ -100,17 +102,29 @@ A beautiful, modern web application for chatting with multiple Large Language Mo
 npm run build
 ```
 
-### Deploy to AWS S3 + CloudFront
-1. Build the application:
-   ```bash
-   npm run build
-   npm run export
-   ```
+### Deployment Options
 
-2. Upload the `out/` directory to your S3 bucket
+### Option 1: Server Deployment (Recommended)
+Deploy to platforms that support Next.js API routes:
 
-3. Configure CloudFront distribution to serve from S3
+**Vercel (Easiest):**
+1. Push code to GitHub
+2. Connect repository to Vercel
+3. Add environment variables in Vercel dashboard
+4. Deploy automatically
+
+**Other platforms:** Railway, Render, AWS Amplify, Netlify
+
+### Option 2: Static Export (Limited - No AI functionality)
+⚠️ **Note:** Static export doesn't support API routes, so AI chat features won't work.
+
+```bash
+npm run export
+# Upload out/ directory to S3 + CloudFront
+```
+
+For AWS S3 + CloudFront with full functionality, you'll need to replace API routes with AWS Lambda functions.
 
 ## Contributing
 
-This project follows the coding guidelines in `llm_code_guidelines.md` and uses the Cascade design system from the `style-guide/` directory.
+AI-Chorus follows the coding guidelines in `llm_code_guidelines.md` and uses the Cascade design system from the `style-guide/` directory.

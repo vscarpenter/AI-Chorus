@@ -1,4 +1,6 @@
-# LLM Chat Application - Original Requirements
+# AI-Chorus - Original Requirements
+
+*Your AI ensemble, ready to perform!*
 
 ## Project Overview
 Build a beautiful visually appealing modern web app that will allow the user to select an LLM (ChatGPT, Claude or Gemini) from a dropdown and then ask it a question. The prompt will then be submitted via API to the selected LLM and the response presented back to the user.

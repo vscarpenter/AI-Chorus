@@ -5,7 +5,9 @@
       "Bash(cp:*)",
       "Bash(npm install:*)",
       "Bash(npm run build:*)",
-      "Bash(tree:*)"
+      "Bash(tree:*)",
+      "WebSearch",
+      "Bash(pnpm run:*)"
     ],
     "deny": [],
     "ask": []
