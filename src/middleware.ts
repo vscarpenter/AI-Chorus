@@ -11,6 +11,11 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // Only apply password protection if ACCESS_PASSWORD is configured
+  if (!process.env.ACCESS_PASSWORD) {
+    return NextResponse.next();
+  }
+
   // Check for authentication cookie
   const authCookie = request.cookies.get('ai-chorus-auth');
   const isAuthenticated = authCookie?.value === process.env.AUTH_SECRET;
