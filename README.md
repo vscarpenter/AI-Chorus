@@ -106,20 +106,56 @@ A beautiful, modern web application for chatting with multiple Large Language Mo
 npm run build
 ```
 
-### Deployment Options
+## Deployment
 
-### Option 1: Server Deployment (Recommended)
-Deploy to platforms that support Next.js API routes:
+### Vercel Deployment (Recommended)
 
-**Vercel (Easiest):**
-1. Push code to GitHub
-2. Connect repository to Vercel
-3. Add environment variables in Vercel dashboard
-4. Deploy automatically
+**Vercel provides the best experience for Next.js applications with built-in support for API routes and environment variables.**
 
-**Other platforms:** Railway, Render, AWS Amplify, Netlify
+#### Quick Deploy
+1. **Push code to GitHub** (if not already done)
+2. **Go to [vercel.com](https://vercel.com)** and sign up/login
+3. **Click "New Project"** → Import your AI-Chorus repository
+4. **Add Environment Variables** during import:
+   ```bash
+   # Required API Keys
+   OPENAI_API_KEY=your-openai-api-key
+   ANTHROPIC_API_KEY=your-anthropic-api-key
+   GEMINI_API_KEY=your-gemini-api-key
 
-### Option 2: Static Export (Limited - No AI functionality)
+   # Optional: Password Protection
+   ACCESS_PASSWORD=your-chosen-password
+   AUTH_SECRET=long-random-secret-string
+   ```
+5. **Deploy** - Your app will be live in 2-3 minutes!
+
+#### Custom Domain (Optional)
+- Add your custom domain in Vercel Dashboard → Settings → Domains
+- Configure DNS CNAME record: `your-domain.com` → `your-app.vercel.app`
+- SSL certificates are automatically provisioned
+
+#### Security Features
+- ✅ **API Keys**: Server-side only, never exposed to browsers
+- ✅ **Password Protection**: Optional login page (set `ACCESS_PASSWORD`)
+- ✅ **HTTPS**: Automatic SSL certificates
+- ✅ **Global CDN**: Fast loading worldwide
+
+#### Automatic Deployments
+- Every `git push` to main branch triggers automatic redeployment
+- Pull requests get preview URLs for testing
+- Zero-downtime deployments
+
+### Alternative Deployment Options
+
+**Other Next.js-compatible platforms:**
+- Railway, Render, AWS Amplify, Netlify
+
+**Requirements for any platform:**
+- Must support Next.js API routes
+- Must support Node.js runtime
+- Environment variable configuration
+
+### Static Export (Not Recommended)
 ⚠️ **Note:** Static export doesn't support API routes, so AI chat features won't work.
 
 ```bash
