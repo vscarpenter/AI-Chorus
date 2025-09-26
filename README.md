@@ -83,17 +83,21 @@ A beautiful, modern web application for chatting with multiple Large Language Mo
 ## Supported Models
 
 ### OpenAI
-- GPT-4 (Most capable)
-- GPT-4 Turbo (Faster, cost-effective)
-- GPT-3.5 Turbo (Quick responses)
+- **GPT-4.1** - Latest flagship with 1M token context, superior coding and reasoning
+- **GPT-4.1 Mini** - Beats GPT-4o performance with 83% cost reduction and half the latency
+- **GPT-4o** - Multimodal model supporting text, audio, image, and video inputs
+- **GPT-4o Mini** - Cost-effective alternative to GPT-3.5 Turbo with better performance
 
 ### Anthropic Claude
-- Claude 3.5 Sonnet (Most intelligent)
-- Claude 3 Haiku (Fastest)
+- **Claude Opus 4.1** - Latest flagship model, most powerful for complex reasoning and coding
+- **Claude Sonnet 4** - Advanced model with superior coding and reasoning capabilities
+- **Claude 3.7 Sonnet** - Hybrid reasoning model with rapid and thoughtful response modes
+- **Claude 3.5 Haiku** - Fast and cost-effective model for interactive applications
 
 ### Google Gemini
-- Gemini 1.5 Pro (Large context)
-- Gemini 1.5 Flash (Fast and efficient)
+- **Gemini 2.5 Pro** - Latest flagship model with adaptive thinking capabilities
+- **Gemini 2.5 Flash** - High-performance model with improved agentic tool use
+- **Gemini 2.5 Flash Lite** - Fast, cost-effective model for high-throughput applications
 
 ## Development
 
