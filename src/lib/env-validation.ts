@@ -15,6 +15,11 @@ export function validateEnvironment(): { isValid: boolean; errors: string[] } {
     errors.push('GEMINI_API_KEY is not configured');
   }
 
+  // Check for authentication configuration (optional)
+  if (process.env.ACCESS_PASSWORD && !process.env.AUTH_SECRET) {
+    errors.push('AUTH_SECRET is required when ACCESS_PASSWORD is set');
+  }
+
   // Check for old NEXT_PUBLIC_ variables and warn about them
   if (process.env.NEXT_PUBLIC_OPENAI_API_KEY) {
     errors.push('NEXT_PUBLIC_OPENAI_API_KEY should be removed for security - use OPENAI_API_KEY instead');
