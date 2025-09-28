@@ -19,11 +19,11 @@ jobs:
       (github.event_name == 'issues' && (contains(github.event.issue.body, '@claude') || contains(github.event.issue.title, '@claude')))
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      pull-requests: read
-      issues: read
-      id-token: write
-      actions: read # Required for Claude to read CI results on PRs
+      contents: write        # ✅ Changed from 'read' - needed to create branches and commit
+      pull-requests: write   # ✅ Changed from 'read' - needed to create PRs
+      issues: write          # ✅ Changed from 'read' - needed to update issue comments
+      id-token: write        # ✅ Kept as-is
+      actions: read          # ✅ Kept as-is - Required for Claude to read CI results on PRs
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -47,4 +47,3 @@ jobs:
           # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
           # or https://docs.claude.com/en/docs/claude-code/sdk#command-line for available options
           # claude_args: '--model claude-opus-4-1-20250805 --allowed-tools Bash(gh pr:*)'
-
